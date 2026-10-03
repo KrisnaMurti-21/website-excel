@@ -1,0 +1,54 @@
+:root{--g:#1d6f42;--g2:#e7f4ec;--ink:#1f2937;--bg:#f6f8fa;--card:#fff;--line:#d9e0e6;--warn:#e11d48;--ok:#16a34a}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+header{position:sticky;top:0;z-index:5;background:var(--g);color:#fff;display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:10px 16px}
+.brand{font-weight:800;font-size:1.1rem}
+nav{display:flex;gap:4px;overflow-x:auto;flex:1}
+nav button{background:transparent;border:0;color:#d6efe0;padding:6px 10px;border-radius:8px;cursor:pointer;white-space:nowrap;font:inherit}
+nav button.on,nav button:hover{background:#fff;color:var(--g)}
+.mini{display:flex;align-items:center;gap:6px;font-size:.85rem}
+.bar{background:#ffffff40;border-radius:99px;height:8px;width:100px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:#fde047;transition:width .4s}
+.bar.lg{background:var(--line);height:18px;width:100%}.bar.lg i{background:var(--g)}
+main{max-width:960px;margin:0 auto;padding:20px 16px 60px}
+.page{display:none}.page.active{display:block;animation:in .3s}
+@keyframes in{from{opacity:0;transform:translateY(8px)}}
+.hero{background:linear-gradient(135deg,var(--g),#3aa86b);color:#fff;border-radius:20px;padding:40px 24px;text-align:center;margin-bottom:24px}
+.hero h1{margin:0 0 8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:14px;box-shadow:0 1px 3px #0001}
+.card h3{margin:.3rem 0}
+.chap.finished{border-color:var(--ok);background:#f0fdf4}
+.btn{background:var(--g2);color:var(--g);border:1px solid var(--g);padding:8px 14px;border-radius:10px;cursor:pointer;font:inherit;margin:4px 6px 4px 0}
+.btn:hover,.btn.on{background:var(--g);color:#fff}
+.btn.big{background:#fde047;color:#222;border:0;font-weight:700;padding:12px 26px;font-size:1.05rem}
+.row{display:flex;flex-wrap:wrap;gap:4px;margin:8px 0}
+.chip{background:#fff;border:1px dashed var(--g);color:var(--g);padding:4px 10px;border-radius:99px;font-family:monospace;font-size:.85rem}
+code{background:var(--g2);padding:1px 6px;border-radius:5px;color:var(--g)}
+.scroll{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;background:#fff}
+table.sheet th,table.sheet td,table.plain th,table.plain td{border:1px solid var(--line);padding:0}
+table.plain th,table.plain td{padding:6px 12px}
+table.sheet th{background:#eef2f5;min-width:34px;text-align:center;font-weight:600;padding:5px 8px;color:#556}
+table.sheet td{min-width:90px}
+table.sheet input{width:100%;border:0;padding:7px 8px;font:inherit;background:transparent}
+table.sheet input:focus{outline:2px solid var(--g);background:#fffbe6}
+table.sheet input.ro{background:#f8fafc;color:#444}
+table.sheet input.ok{background:#dcfce7}table.sheet input.bad{background:#ffe4e6}
+.dm td{padding:8px 12px;cursor:pointer;min-width:90px}
+.dm td.hd{background:#eef2f5;font-weight:600;cursor:default;text-align:center}
+.dm td.sel{background:#fde68a;outline:2px solid #f59e0b}
+.dm td:not(.hd):hover{background:var(--g2)}
+.info{margin:10px 0;padding:12px 14px;border-left:4px solid var(--g);background:var(--g2);border-radius:8px}
+.nums{display:flex;gap:6px;margin:8px 0;flex-wrap:wrap}
+.nums span{background:#fff;border:1px solid var(--line);padding:4px 12px;border-radius:8px}
+.res{font-size:2rem;font-weight:800;color:var(--g)}
+.q{margin-bottom:14px}
+.q .opt{display:block;width:100%;text-align:left;margin:5px 0}
+.q .opt.right{background:var(--ok);color:#fff;border-color:var(--ok)}
+.q .opt.wrong{background:var(--warn);color:#fff;border-color:var(--warn)}
+.fb{margin-top:6px;font-size:.95rem}
+.q input[type=text]{padding:8px;border:1px solid var(--line);border-radius:8px;font:inherit;width:min(280px,100%)}
+.check{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px}
+.check li.y{color:var(--ok);font-weight:600}
+@media(max-width:600px){.hero{padding:28px 16px}table.sheet td{min-width:72px}}
