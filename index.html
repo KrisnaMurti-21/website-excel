@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Excel Dasar Interaktif</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand">📗 Excel Dasar</div>
+  <nav id="nav"></nav>
+  <div class="mini"><div class="bar"><i id="pbMini"></i></div><span id="pctMini">0%</span></div>
+</header>
+
+<main>
+<!-- BERANDA -->
+<section id="beranda" class="page active" data-t="Beranda">
+  <div class="hero">
+    <h1>Belajar Microsoft Excel dari Nol 🚀</h1>
+    <p>Kenali Excel, pahami cell dan range, lalu olah tabel nilai siswa dengan rumus.</p>
+    <button class="btn big" data-go="materi">Mulai Belajar</button>
+  </div>
+  <h2>Tujuan Pembelajaran</h2>
+  <div class="grid">
+    <div class="card">🧭<h3>Mengenal Excel</h3><p>Menjelaskan workbook, worksheet, row, column, cell, dan range.</p></div>
+    <div class="card">⌨️<h3>Mengelola Data</h3><p>Memasukkan, mengedit data, dan memakai operator matematika.</p></div>
+    <div class="card">🧮<h3>Memakai Rumus</h3><p>Menggunakan SUM, AVERAGE, MAX, MIN, dan COUNT.</p></div>
+    <div class="card">📊<h3>Mengolah Nilai</h3><p>Menyelesaikan tabel nilai siswa dengan beberapa rumus.</p></div>
+  </div>
+</section>
+
+<!-- MATERI -->
+<section id="materi" class="page" data-t="Materi">
+  <h2>Materi</h2>
+  <article class="card chap" data-k="m1"><h3>1. Pengenalan Microsoft Excel</h3>
+    <p>Excel adalah aplikasi <b>spreadsheet</b> untuk mengolah data berupa angka dan teks. Contohnya: daftar nilai, catatan uang jajan, dan jadwal piket.</p>
+    <button class="btn done">✔ Tandai selesai</button></article>
+  <article class="card chap" data-k="m2"><h3>2. Workbook dan Worksheet</h3>
+    <p><b>Workbook</b> adalah satu file Excel (.xlsx). <b>Worksheet</b> adalah lembar kerja di dalamnya (Sheet1, Sheet2, dst.). Analogi: workbook = buku, worksheet = halaman.</p>
+    <button class="btn done">✔ Tandai selesai</button></article>
+  <article class="card chap" data-k="m3"><h3>3. Row, Column, Cell, dan Range</h3>
+    <ul><li><b>Row</b> (baris) bernomor: 1, 2, 3...</li><li><b>Column</b> (kolom) berhuruf: A, B, C...</li>
+    <li><b>Cell</b> adalah pertemuan kolom dan baris, misalnya <code>B3</code>.</li>
+    <li><b>Range</b> adalah kumpulan cell, misalnya <code>B2:B6</code>.</li></ul>
+    <button class="btn" data-go="interaktif">Coba di Penjelasan Interaktif →</button>
+    <button class="btn done">✔ Tandai selesai</button></article>
+  <article class="card chap" data-k="m4"><h3>4. Memasukkan dan Mengedit Data</h3>
+    <ul><li>Klik cell, ketik data, tekan <b>Enter</b>.</li><li>Tekan <b>F2</b> atau klik dua kali untuk mengedit.</li>
+    <li>Tekan <b>Delete</b> untuk menghapus isi cell.</li><li>Teks rata kiri, angka rata kanan.</li></ul>
+    <button class="btn done">✔ Tandai selesai</button></article>
+  <article class="card chap" data-k="m5"><h3>5. Operator Matematika Sederhana</h3>
+    <p>Rumus selalu diawali tanda <code>=</code>.</p>
+    <table class="plain"><tr><th>Operator</th><th>Arti</th><th>Contoh</th></tr>
+    <tr><td>+</td><td>tambah</td><td><code>=B2+C2</code></td></tr><tr><td>-</td><td>kurang</td><td><code>=D2-B2</code></td></tr>
+    <tr><td>*</td><td>kali</td><td><code>=B2*2</code></td></tr><tr><td>/</td><td>bagi</td><td><code>=(B2+C2)/2</code></td></tr>
+    <tr><td>^</td><td>pangkat</td><td><code>=B2^2</code></td></tr></table>
+    <button class="btn done">✔ Tandai selesai</button></article>
+</section>
+
+<!-- PENJELASAN INTERAKTIF -->
+<section id="interaktif" class="page" data-t="Cell & Range">
+  <h2>Kenali Cell dan Range</h2>
+  <p>Pilih mode, lalu klik tabel di bawah.</p>
+  <div class="row"><button class="btn on" data-mode="cell">Mode Cell</button><button class="btn" data-mode="range">Mode Range (klik cell awal, lalu cell akhir)</button></div>
+  <div class="scroll"><div id="demo"></div></div>
+  <div class="info" id="demoInfo">Klik salah satu cell 👆</div>
+</section>
+
+<!-- RUMUS -->
+<section id="rumus" class="page" data-t="Rumus">
+  <h2>Rumus Excel</h2>
+  <p>Data contoh: nilai tugas lima siswa di <code>B2:B6</code>. Klik semua tab rumus.</p>
+  <div class="row" id="ftabs"></div>
+  <div class="card" id="fbox"></div>
+</section>
+
+<!-- SIMULASI -->
+<section id="simulasi" class="page" data-t="Simulasi">
+  <h2>Simulasi dan Praktik</h2>
+  <p>Klik cell mana saja lalu ketik rumus, contoh <code>=SUM(B2:B6)</code> di B8. Tekan Enter.</p>
+  <div class="row"><span class="chip">=SUM(B2:B6)</span><span class="chip">=AVERAGE(C2:C6)</span><span class="chip">=MAX(D2:D6)</span><span class="chip">=MIN(D2:D6)</span><span class="chip">=COUNT(B2:B6)</span><span class="chip">=(B2+C2+D2)/3</span></div>
+  <div class="scroll"><div id="simSheet"></div></div>
+  <div class="info" id="simInfo">Hasil rumus akan tampil langsung di cell.</div>
+  <button class="btn" id="simReset">Reset tabel</button>
+</section>
+
+<!-- KUIS -->
+<section id="kuis" class="page" data-t="Kuis">
+  <h2>Kuis</h2>
+  <div id="quiz"></div>
+  <div class="info" id="quizScore">Jawab semua soal.</div>
+</section>
+
+<!-- EVALUASI -->
+<section id="evaluasi" class="page" data-t="Evaluasi Akhir">
+  <h2>Evaluasi Akhir: Olah Nilai Siswa</h2>
+  <ol>
+    <li>Isi <b>E2:E6</b> dengan rata-rata tugas, UTS, UAS tiap siswa.</li>
+    <li>Isi <b>B8</b> nilai UAS tertinggi, <b>B9</b> nilai UAS terendah.</li>
+    <li>Isi <b>B10</b> jumlah siswa, <b>B11</b> total nilai Tugas.</li>
+  </ol>
+  <p>Gunakan rumus (diawali <code>=</code>), bukan mengetik angka manual.</p>
+  <div class="scroll"><div id="evalSheet"></div></div>
+  <button class="btn big" id="evalCheck">Periksa Jawaban</button>
+  <div class="info" id="evalInfo"></div>
+</section>
+
+<!-- PROGRESS -->
+<section id="progress" class="page" data-t="Progres">
+  <h2>Progres Belajar</h2>
+  <div class="card"><div class="bar lg"><i id="pbBig"></i></div><p id="pctBig">0%</p></div>
+  <div class="card"><ul id="checklist" class="check"></ul></div>
+  <button class="btn" id="resetAll">Hapus semua progres</button>
+</section>
+</main>
+<script src="script.js"></script>
+</body>
+  </html>
